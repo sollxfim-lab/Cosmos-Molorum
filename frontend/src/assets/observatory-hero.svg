@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" fill="none" role="img" aria-label="Observatory emblem with orbit paths and a star">
+  <defs>
+    <radialGradient id="obsHalo" cx="0" cy="0" r="1" gradientTransform="translate(160 100) rotate(90) scale(76)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#eadcc2" stop-opacity=".16" />
+      <stop offset="1" stop-color="#eadcc2" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="obsOrbit" cx="0" cy="0" r="1" gradientTransform="translate(160 100) rotate(-18) scale(112 42)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#eadcc2" stop-opacity=".05" />
+      <stop offset=".5" stop-color="#eadcc2" stop-opacity=".62" />
+      <stop offset="1" stop-color="#c9a66f" stop-opacity=".18" />
+    </radialGradient>
+    <filter id="obsGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="3" />
+    </filter>
+  </defs>
+
+  <ellipse cx="160" cy="100" rx="118" ry="82" fill="url(#obsHalo)" />
+
+  <g stroke="#eadcc2" stroke-linecap="round">
+    <circle cx="160" cy="100" r="58" stroke-opacity=".12" />
+    <circle cx="160" cy="100" r="76" stroke-opacity=".07" stroke-dasharray="2 6" />
+    <ellipse cx="160" cy="100" rx="118" ry="44" transform="rotate(-18 160 100)" stroke="url(#obsOrbit)" />
+    <ellipse cx="160" cy="100" rx="92" ry="32" transform="rotate(22 160 100)" stroke-opacity=".16" stroke-dasharray="3 7" />
+
+    <path d="M132 146V100a28 28 0 0 1 56 0v46" stroke-opacity=".5" stroke-width="1.4" />
+    <path d="M139 146v-45a21 21 0 0 1 42 0v45" stroke-opacity=".22" />
+    <path d="M116 146h88" stroke-opacity=".55" stroke-width="1.4" />
+    <path d="M132 146v6M188 146v6" stroke-opacity=".4" />
+  </g>
+
+  <g fill="#eadcc2">
+    <circle cx="160" cy="100" r="2.4" fill-opacity=".9" />
+    <circle cx="58" cy="128" r="2" fill-opacity=".8" />
+    <circle cx="62" cy="128" r="5" fill-opacity=".12" />
+    <circle cx="262" cy="70" r="1.8" fill-opacity=".7" />
+    <circle cx="258" cy="70" r="4.6" fill-opacity=".1" />
+    <circle cx="88" cy="52" r="1.4" fill-opacity=".45" />
+    <circle cx="242" cy="150" r="1.4" fill-opacity=".4" />
+    <circle cx="36" cy="88" r="1.1" fill-opacity=".3" />
+    <circle cx="286" cy="112" r="1.1" fill-opacity=".3" />
+  </g>
+
+  <g filter="url(#obsGlow)" opacity=".5">
+    <path d="M160 74c1.6 9.8 5.8 14 15.6 15.6-9.8 1.6-14 5.8-15.6 15.6-1.6-9.8-5.8-14-15.6-15.6 9.8-1.6 14-5.8 15.6-15.6Z" fill="#f4eee2" />
+  </g>
+  <path d="M160 74c1.6 9.8 5.8 14 15.6 15.6-9.8 1.6-14 5.8-15.6 15.6-1.6-9.8-5.8-14-15.6-15.6 9.8-1.6 14-5.8 15.6-15.6Z" fill="#f4eee2" />
+
+  <path d="M46 40h4M48 38v4M276 152h3.4M277.7 150.3v3.4M104 166h2.6M105.3 164.7v2.6" stroke="#c9a66f" stroke-opacity=".55" stroke-linecap="round" />
+</svg>
