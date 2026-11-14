@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="description"
+      content="Cosmos Molorum Sentinel - konsol penilaian keamanan siber yang terukur dan rapi."
+    />
+    <title>Cosmos Molorum Sentinel</title>
+    <link rel="icon" href="/assets/brand.svg?v=2.2.0" type="image/svg+xml" />
+    <link rel="stylesheet" href="/assets/app.css" />
+    <link rel="stylesheet" href="/assets/analysis.css" />
+    <link rel="stylesheet" href="/assets/intel.css" />
+  </head>
+  <body>
+    <div class="boot" id="boot">
+      <div class="boot-mark">
+        <img src="/assets/brand.svg?v=2.2.0" alt="" width="62" height="62" />
+      </div>
+      <p class="boot-name">Cosmos Molorum</p>
+      <p class="boot-sub">Menyiapkan Sentinel</p>
+      <div class="boot-line"><span></span></div>
+    </div>
+
+    <div class="login" id="login" hidden>
+      <section class="login-brand">
+        <div class="login-art" aria-hidden="true">
+          <img
+            src="/assets/posters/observatory.svg?v=2.2.0"
+            alt=""
+            width="1200"
+            height="1000"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </div>
+        <div class="login-brand-top">
+          <img src="/assets/brand.svg?v=2.2.0" alt="" width="46" height="46" />
+          <div>
+            <p class="eyebrow">Cosmos Molorum</p>
+            <p class="brand-sub">Security Operations</p>
+          </div>
+        </div>
+        <div class="login-copy">
+          <p class="eyebrow brass">Sentinel · 2.2.0</p>
+          <h1>Penilaian keamanan yang terukur,<br /><em>mendalam, dan rapi.</em></h1>
+          <p class="login-lede">
+            Seratus lima modul pemeriksaan untuk memetakan postur transport, sesi,
+            eksposur, penanganan input, dan pertahanan tepi pada aset organisasi Anda.
+          </p>
+          <div class="login-metrics">
+            <div><strong>105</strong><span>Modul pemeriksaan</span></div>
+            <div><strong>5</strong><span>Kategori disiplin</span></div>
+            <div><strong>2.2.0</strong><span>Rilis konsol</span></div>
+          </div>
+        </div>
+        <div class="login-foot">
+          <span class="pulse-dot"></span>
+          Konsol ini mencatat setiap aktivitas operator pada jejak audit.
+        </div>
+      </section>
+
+      <section class="login-panel">
+        <div class="login-card">
+          <p class="eyebrow">Konsol privat</p>
+          <h2>Masuk ke Sentinel</h2>
+          <p class="muted">
+            Gunakan kredensial administrator yang dibuat saat instalasi.
+          </p>
+          <form id="login-form" autocomplete="on">
+            <label class="field">
+              <span>Nama pengguna</span>
+              <input
+                id="login-username"
+                name="username"
+                type="text"
+                autocomplete="username"
+                spellcheck="false"
+                required
+                maxlength="80"
+              />
+            </label>
+            <label class="field">
+              <span>Kata sandi</span>
+              <input
+                id="login-password"
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                required
+                maxlength="200"
+              />
+            </label>
+            <div class="form-error" id="login-error" role="alert" hidden></div>
+            <button class="btn btn-primary btn-block" id="login-submit" type="submit">
+              Masuk
+            </button>
+          </form>
+          <div class="login-rule"><span>Perlindungan sesi</span></div>
+          <ul class="login-list">
+            <li>Cookie sesi HttpOnly dengan SameSite</li>
+            <li>Pembatasan percobaan masuk per alamat</li>
+            <li>Jejak audit untuk aktivitas konsol</li>
+          </ul>
+        </div>
+        <p class="login-legal">
+          Cosmos Molorum Sentinel · Konsol asesmen untuk operator terautentikasi.
+        </p>
+      </section>
+    </div>
+
+    <div class="shell" id="shell" hidden>
+      <div class="nav-scrim" id="nav-scrim"></div>
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+          <img src="/assets/brand.svg?v=2.2.0" alt="" width="38" height="38" />
+          <div>
+            <p class="wordmark">Cosmos Molorum</p>
+            <p class="brand-sub">Sentinel Console</p>
+          </div>
+        </div>
+
+        <div class="sidebar-scope">
+          <span class="scope-label">Ruang kerja</span>
+          <strong>Security Assessment</strong>
+          <span class="scope-note">Operator terautentikasi</span>
+        </div>
+
+        <nav class="nav" aria-label="Navigasi utama">
+          <a class="nav-item" href="#/overview" data-route="overview">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h7v7H4zM13 4h7v4h-7zM13 10h7v10h-7zM4 13h7v7H4z"/></svg>
+            <span>Ikhtisar</span>
+          </a>
+          <a class="nav-item" href="#/scan" data-route="scan">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5M11 8v6M8 11h6"/></svg>
+            <span>Pemindaian Baru</span>
+          </a>
+          <a class="nav-item" href="#/history" data-route="history">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+            <span>Riwayat</span>
+          </a>
+          <a class="nav-item" href="#/analysis" data-route="analysis">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16M6 16l3.5-4 3 2.5L18 7"/><path d="M15 7h3v3"/></svg>
+            <span>Analisis</span>
+          </a>
+          <a class="nav-item" href="#/intel" data-route="intel">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><ellipse cx="12" cy="12" rx="9.2" ry="4" transform="rotate(-26 12 12)"/><ellipse cx="12" cy="12" rx="9.2" ry="4" transform="rotate(38 12 12)"/><circle cx="19.3" cy="7.8" r="1.1"/></svg>
+            <span>Intelijen</span>
+          </a>
+          <a class="nav-item" href="#/modules" data-route="modules">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7v10l8 4 8-4V7z"/><path d="m4 7 8 4 8-4M12 11v10"/></svg>
+            <span>Pustaka Modul</span>
+          </a>
+          <a class="nav-item" href="#/audit" data-route="audit">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 12h7M9 16h7M9 8h2"/></svg>
+            <span>Audit</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-spacer"></div>
+
+        <div class="sidebar-guard">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 11h7M9 15h5"/></svg>
+          <p>Asesmen berjalan dengan anggaran permintaan terjaga dan setiap langkah tercatat pada audit.</p>
+        </div>
+
+        <div class="sidebar-account">
+          <div class="avatar" id="user-avatar">CM</div>
+          <div class="account-copy">
+            <strong id="user-name">Administrator</strong>
+            <span id="user-role">admin</span>
+          </div>
+          <button class="icon-btn" id="account-btn" type="button" title="Pengaturan akun" aria-label="Pengaturan akun">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.8v3M12 18.2v3M2.8 12h3M18.2 12h3M5.5 5.5l2.1 2.1M16.4 16.4l2.1 2.1M18.5 5.5l-2.1 2.1M7.6 16.4l-2.1 2.1"/></svg>
+          </button>
+        </div>
+      </aside>
+
+      <div class="main">
+        <header class="topbar">
+          <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Buka navigasi">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+          <div class="crumb">
+            <span class="crumb-root">Sentinel</span>
+            <span class="crumb-sep">/</span>
+            <span id="crumb-current">Ikhtisar</span>
+          </div>
+          <div class="top-actions">
+            <span class="chip chip-guard">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m8.2 12 2.4 2.4 5.2-5.2"/></svg>
+              Operator terautentikasi
+            </span>
+            <button class="icon-btn" id="refresh-btn" type="button" title="Muat ulang" aria-label="Muat ulang">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 6.4"/><path d="M20 4v7h-7"/></svg>
+            </button>
+            <button class="btn btn-ghost btn-sm" id="logout-btn" type="button">Keluar</button>
+          </div>
+        </header>
+
+        <main class="view" id="view" tabindex="-1"></main>
+      </div>
+    </div>
+
+    <div class="modal" id="modal" hidden>
+      <div class="modal-scrim" data-modal-close></div>
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-head">
+          <div>
+            <p class="eyebrow" id="modal-kicker">Konfirmasi</p>
+            <h3 id="modal-title">Lanjutkan</h3>
+          </div>
+          <button class="icon-btn" type="button" data-modal-close aria-label="Tutup">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+          </button>
+        </div>
+        <div class="modal-body" id="modal-body"></div>
+        <div class="modal-actions" id="modal-actions"></div>
+      </div>
+    </div>
+
+    <div class="toast-stack" id="toast-stack" aria-live="polite"></div>
+
+    <script src="/assets/app.js" defer></script>
+  </body>
+</html>

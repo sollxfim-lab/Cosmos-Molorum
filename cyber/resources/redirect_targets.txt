@@ -1,0 +1,20 @@
+# Sentinel Open Redirect Wordlist
+# Format: one host or URL per line. Comment lines begin with #.
+# These are benign external markers; the probe adds a unique token per run.
+
+https://example.com/
+https://example.org/
+https://example.net/
+http://example.com/
+http://example.org/
+//example.com/
+//example.org/
+https://www.example.com/
+https://example.com/sentinel
+/%2F%2Fexample.com
+/\/example.com
+https:example.com
+http:example.com
+//example.com/%2F..
+https://example.com@example.org/
+https://example.org#@example.com

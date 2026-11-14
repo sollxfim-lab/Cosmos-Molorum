@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 440" fill="none">
+  <defs>
+    <radialGradient id="orb-halo" cx="50%" cy="48%" r="52%">
+      <stop offset="0" stop-color="#d8b97f" stop-opacity=".14"/>
+      <stop offset=".52" stop-color="#86b2bd" stop-opacity=".045"/>
+      <stop offset="1" stop-color="#061421" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-sweep" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#d8b97f" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#d8b97f" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-planet" cx="34%" cy="30%" r="70%">
+      <stop offset="0" stop-color="#f7f0e3" stop-opacity=".48"/>
+      <stop offset=".3" stop-color="#d8b97f" stop-opacity=".32"/>
+      <stop offset=".66" stop-color="#4e6977" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#0c2335" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="orb-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" stroke="#86b2bd" stroke-opacity=".055"/>
+    </pattern>
+    <pattern id="orb-stars" width="120" height="120" patternUnits="userSpaceOnUse">
+      <circle cx="14" cy="22" r="1" fill="#f4eee2" fill-opacity=".45"/>
+      <circle cx="72" cy="66" r=".8" fill="#d8b97f" fill-opacity=".45"/>
+      <circle cx="104" cy="18" r="1.2" fill="#86b2bd" fill-opacity=".25"/>
+    </pattern>
+  </defs>
+
+  <rect width="640" height="440" fill="url(#orb-grid)"/>
+  <rect width="640" height="440" fill="url(#orb-stars)"/>
+  <circle cx="335" cy="204" r="210" fill="url(#orb-halo)"/>
+
+  <g stroke="#d8b97f" stroke-linecap="round">
+    <path d="M24 52V24h28M588 24h28v28M616 388v28h-28M52 416H24v-28" stroke-opacity=".38"/>
+    <path d="M24 64v22M24 64h22M616 64V42M616 64h-22M616 376v22M616 376h-22M24 376v22M24 376h22" stroke-opacity=".16"/>
+  </g>
+
+  <g transform="translate(335 204)">
+    <circle r="158" stroke="#d8b97f" stroke-opacity=".22"/>
+    <circle r="118" stroke="#86b2bd" stroke-opacity=".2" stroke-dasharray="3 9"/>
+    <circle r="77" stroke="#d8b97f" stroke-opacity=".16"/>
+    <circle r="42" stroke="#d8b97f" stroke-opacity=".2" stroke-dasharray="2 7"/>
+    <path d="M-158 0H158M0-158V158" stroke="#d8b97f" stroke-opacity=".15"/>
+    <path d="M-111-111L111 111M111-111L-111 111" stroke="#86b2bd" stroke-opacity=".1"/>
+    <path d="M0 0L-142-62A155 155 0 0 1-129-91Z" fill="url(#orb-sweep)"/>
+    <path d="M-158 0A158 158 0 0 1 0-158" stroke="#d8b97f" stroke-opacity=".38" stroke-width="1.5"/>
+    <circle r="3" fill="#d8b97f"/>
+
+    <g>
+      <circle cx="-92" cy="-64" r="12" fill="#d8b97f" fill-opacity=".06"/>
+      <circle cx="-92" cy="-64" r="3.2" fill="#d8b97f"/>
+      <circle cx="-92" cy="-64" r="7" stroke="#d8b97f" stroke-opacity=".4"/>
+      <circle cx="84" cy="-34" r="11" fill="#df8b90" fill-opacity=".06"/>
+      <circle cx="84" cy="-34" r="2.8" fill="#df8b90"/>
+      <circle cx="52" cy="96" r="10" fill="#6cc4a0" fill-opacity=".06"/>
+      <circle cx="52" cy="96" r="2.6" fill="#6cc4a0"/>
+      <circle cx="-126" cy="75" r="8" fill="#86b2bd" fill-opacity=".06"/>
+      <circle cx="-126" cy="75" r="2.2" fill="#86b2bd"/>
+    </g>
+
+    <circle r="22" fill="#092031" stroke="#d8b97f" stroke-opacity=".58" stroke-width="1.2"/>
+    <path d="M0-22a22 22 0 0 1 0 44" stroke="#f4eee2" stroke-opacity=".4"/>
+    <circle cx="7" cy="-7" r="4.2" fill="#d8b97f" fill-opacity=".9"/>
+    <circle cx="-8" cy="8" r="1.4" fill="#86b2bd" fill-opacity=".8"/>
+    <circle r="34" stroke="#d8b97f" stroke-opacity=".18" stroke-dasharray="2 6"/>
+  </g>
+
+  <g>
+    <circle cx="70" cy="430" r="170" fill="url(#orb-planet)"/>
+    <circle cx="70" cy="430" r="170" stroke="#d8b97f" stroke-opacity=".22"/>
+    <ellipse cx="70" cy="430" rx="240" ry="47" transform="rotate(-12 70 430)" stroke="#d8b97f" stroke-opacity=".24"/>
+    <ellipse cx="70" cy="430" rx="278" ry="66" transform="rotate(-12 70 430)" stroke="#86b2bd" stroke-opacity=".11"/>
+  </g>
+
+  <g stroke="#d8b97f" stroke-opacity=".18">
+    <path d="M390 372h122M390 386h74"/>
+    <path d="M512 372v-8M390 372v-8M464 386v-7M390 386v-7"/>
+  </g>
+  <g font-family="ui-monospace, SFMono-Regular, Consolas, monospace" fill="#d8b97f" fill-opacity=".4" font-size="8.5" letter-spacing="2.4">
+    <text x="390" y="408">OBSERVE / ASSESS / DEFEND</text>
+  </g>
+</svg>
