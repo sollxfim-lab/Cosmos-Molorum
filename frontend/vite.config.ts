@@ -28,6 +28,6 @@ export default defineConfig({
   preview: {
     host: "0.0.0.0",
     port: 5173,
-    allowedHosts: [".monkeycode-ai.live"],
+    allowedHosts: ["cosmos-molorum.onrender.com"],
   },
 });
