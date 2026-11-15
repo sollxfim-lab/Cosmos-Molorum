@@ -20,9 +20,9 @@ export default defineConfig({
     port: 5173,
     allowedHosts: [".monkeycode-ai.live", ".onrender.com"],
     proxy: {
-      "/api": { target: "https://cosmos-molorum-1.onrender.com:10000", changeOrigin: true },
-      "/ws": { target: "ws://cosmos-molorum-1.onrender.com:10000", ws: true },
-      "/gate": { target: "https://cosmos-molorum-1.onrender.com:10000", changeOrigin: true },
+      "/api": { target: "https://cosmos-molorum-1.onrender.com:45265", changeOrigin: true },
+      "/ws": { target: "ws://cosmos-molorum-1.onrender.com:45265", ws: true },
+      "/gate": { target: "https://cosmos-molorum-1.onrender.com:45265", changeOrigin: true },
     },
   },
   preview: {
